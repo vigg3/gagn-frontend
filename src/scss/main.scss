@@ -1,5 +1,55 @@
-$red: rgb(255, 255, 255);
+@charset "UTF-8";
 
-body {
-  background: $red;
+// 1. Config and helpers
+@use 'abstracts' as *;
+
+// 2. Vendors
+@import 'vendors/normalize';
+
+// 3. Basic
+@import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
+
+// 4. Layout
+@import 'layout/header', 'layout/footer';
+
+// --------
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+
+  .logo {
+    color: red;
+  }
+
+  .util {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+
+      .toggle-nav {
+      }
+
+      .overlay {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 100%;
+      }
+    }
+  }
+}
+
+main {
+  height: 100vh;
 }
